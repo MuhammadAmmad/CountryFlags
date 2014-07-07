@@ -4,30 +4,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/game_pointsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
+     <RelativeLayout
+        android:id="@+id/game_bar_points"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#009688" >
 
-    <TextView
-        android:id="@+id/game_rightTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        <TextView
+            android:id="@+id/game_pointsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="18dp"/>
+
+        <TextView
+            android:id="@+id/game_rightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"/>
+    </RelativeLayout>
 
     <RelativeLayout
+        
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical" >
+        android:layout_below="@id/game_bar_points"
+                android:orientation="vertical" >
 
         <LinearLayout
             android:id="@+id/game_buttonsGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
             android:paddingLeft="32dp"
             android:paddingRight="32dp" >
@@ -36,25 +48,29 @@
                 android:id="@+id/game_var1Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:background="@drawable/game_country_button" />
 
             <Button
                 android:id="@+id/game_var2Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:background="@drawable/game_country_button" />
 
             <Button
                 android:id="@+id/game_var3Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:background="@drawable/game_country_button" />
 
             <Button
                 android:id="@+id/game_var4Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:background="@drawable/game_country_button" />
         </LinearLayout>
 
         <RelativeLayout
@@ -64,8 +80,8 @@
 
             <ImageView
                 android:id="@+id/game_flagImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:layout_centerInParent="true" />
         </RelativeLayout>
     </RelativeLayout>

@@ -118,7 +118,7 @@ public class QuestionPageActivity extends FragmentActivity implements LoaderCall
 	public void setFields(ItemQuestion qItem) {
 		for (Button button:buttons){
 			button.setText("");
-			button.setBackgroundColor(getResources().getColor(R.color.dark_slate_gray));
+			button.setBackgroundResource(R.drawable.game_country_button);
 		}
 		Random rand = new Random();
 		for (int i = 0; i < 4; i++) {
@@ -242,16 +242,16 @@ public class QuestionPageActivity extends FragmentActivity implements LoaderCall
 
 			if (!sendAnswer) {
 				if (isRightButton(v,itemQuestion)) {
-					v.setBackgroundColor(getResources().getColor(R.color.green));
+					
+					((Button)v).setBackgroundResource(R.drawable.game_country_button_true);
 					addRight();
 
 				} else {
-					v.setBackgroundColor(getResources().getColor(
-							R.color.red));
+					v.setBackgroundResource(R.drawable.game_country_button_false);
 					for (Button btn : buttons) {
 						// Ищем правильный ответ
 						if (isRightButton(btn,itemQuestion)) {
-							btn.setBackgroundColor(getResources().getColor(R.color.green));
+							btn.setBackgroundResource(R.drawable.game_country_button_true);
 							break;
 						}
 
@@ -274,9 +274,6 @@ public class QuestionPageActivity extends FragmentActivity implements LoaderCall
 	public android.support.v4.content.Loader<ItemQuestion> onCreateLoader(int id, Bundle args) {
 		return new ItemQuestionLoader(this, args);
 	}
-
-	
-
 
 	@Override
 	public void onLoadFinished(

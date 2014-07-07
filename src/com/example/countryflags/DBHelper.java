@@ -8,7 +8,7 @@ import android.text.TextUtils;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-	private static final String DB_NAME = "questoins11";
+	private static final String DB_NAME = "questoins00";
 	public static final String TABLE_COUNTRIES = "questions";
 	public static final String TABLE_RECORDS = "records";
 
@@ -43,9 +43,6 @@ public class DBHelper extends SQLiteOpenHelper {
 		db.execSQL(CREATE_TABLE_COUNTRYES);
 		db.execSQL(CREATE_TABLE_RECORDS);
 		
-		for (int i=0;i<10;i++){
-			addRecord(db, "Player " + i,10+i,"3 Jule 2014");
-		}
 		
 		addCountry(db, R.drawable.at, "Austria");
 		addCountry(db, R.drawable.au, "Australia");

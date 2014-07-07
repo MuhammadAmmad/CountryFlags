@@ -18,6 +18,7 @@ import android.widget.EditText;
 public class SaveRecordDialog extends DialogFragment {
 
 	public static final String EXTRA_POINTS = "points";
+	private static final String DEFAULT_PLAYER_NAME = "Player";
 	private EditText nameET;
 	private int points;
 
@@ -27,6 +28,7 @@ public class SaveRecordDialog extends DialogFragment {
 		View view = getActivity().getLayoutInflater().inflate(
 				R.layout.d_save_record, null);
 		nameET = (EditText) view.findViewById(R.id.game_diglag_nameEditText);
+		nameET.setText(DEFAULT_PLAYER_NAME);
 		return new AlertDialog.Builder(getActivity()).setView(view)
 				.setTitle(R.string.records)
 				.setPositiveButton(android.R.string.ok, new buttonClick())
@@ -40,7 +42,7 @@ public class SaveRecordDialog extends DialogFragment {
 			if (!TextUtils.isEmpty(name)) {
 				addRecord(name, points);
 			} else {
-				addRecord("Player", points);
+				addRecord(DEFAULT_PLAYER_NAME, points);
 			}
 			Intent intent = new Intent(getActivity(), RecordActivity.class);
 			startActivity(intent);
