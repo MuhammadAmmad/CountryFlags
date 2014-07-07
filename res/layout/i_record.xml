@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/game_record_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+	<TextView
+	    android:id="@+id/game_record_points"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/game_record_name"
+	    android:text="421" />
+
+	<TextView
+	    android:id="@+id/game_record_date"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBaseline="@+id/game_record_points"
+	    android:layout_alignBottom="@+id/game_record_points"
+	    android:layout_alignParentRight="true"
+	    android:text="24 Jul 2014" />
+
+</RelativeLayout>

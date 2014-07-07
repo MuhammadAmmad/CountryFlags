@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.countryflags"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.example.countryflags.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.countryflags.HomeActivity"/>
+        <activity android:name="com.example.countryflags.QuestionPageActivity"/>
+        <activity android:name="com.example.countryflags.EndGameActivity"/>
+        <activity android:name="com.example.countryflags.RecordActivity"/>
+        <activity android:name="com.example.countryflags.SettingActivity"/>
+        <provider android:authorities="com.example.countryandflags.providers.Questions" android:name="com.example.countryflags.GameContentProvider"/>
+    </application>
+
+</manifest>
