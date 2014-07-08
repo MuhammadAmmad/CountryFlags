@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class QuestionPageActivity extends FragmentActivity implements LoaderCallbacks<ItemQuestion>{
@@ -34,7 +35,7 @@ public class QuestionPageActivity extends FragmentActivity implements LoaderCall
 	
 
 	private TextView pointsTextView;
-	private TextView rightTextView;
+	private ProgressBar progressBar;
 	Button[] buttons = new Button[4];
 	private ImageView flagImageView;
 	
@@ -160,7 +161,7 @@ public class QuestionPageActivity extends FragmentActivity implements LoaderCall
 
 	public void findViews() {
 		pointsTextView = (TextView) findViewById(R.id.game_pointsTextView);
-		rightTextView = (TextView) findViewById(R.id.game_rightTextView);
+		progressBar = (ProgressBar) findViewById(R.id.game_progressBar);
 		
 		buttons[0] = (Button) findViewById(R.id.game_var1Button);
 		buttons[1] = (Button) findViewById(R.id.game_var2Button);
@@ -199,7 +200,7 @@ public class QuestionPageActivity extends FragmentActivity implements LoaderCall
 
 	public void resetFields() {
 		pointsTextView.setText(String.valueOf(points));
-		rightTextView.setText(current_item + " / " + countQuesions);
+		progressBar.setProgress(100*current_item/countQuesions);
 		
 		
 	}
